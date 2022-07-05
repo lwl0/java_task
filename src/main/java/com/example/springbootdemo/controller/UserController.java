@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController    // 表示这是一个控制器
-@RequestMapping("/user")         // 路由
+@RequestMapping("/user")// 路由
 public class UserController {
 
     @Autowired// 自动注入
