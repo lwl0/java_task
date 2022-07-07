@@ -28,4 +28,10 @@
     <result column="locationSource" property="locationsource" jdbcType="VARCHAR" />
     <result column="magSource" property="magsource" jdbcType="VARCHAR" />
   </resultMap>
+  <select id="randSearch" resultType="com.example.springbootdemo.entity.DataClean1">
+    SELECT * FROM data_clean1 ORDER BY RAND() LIMIT #{num}
+  </select>
+  <select id="conditionQuery" resultType="com.example.springbootdemo.entity.DataClean1">
+    select * from sys_user where place like CONCAT('%',#{location},'%')
+  </select>
 </mapper>
