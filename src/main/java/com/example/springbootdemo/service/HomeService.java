@@ -46,5 +46,8 @@ public class HomeService {
         return userPage;
     }
 
+    public void update(DataClean1 dataClean1){
+        dataClean1Mapper.updateByPrimaryKeySelective(dataClean1);
+    }
 
 }

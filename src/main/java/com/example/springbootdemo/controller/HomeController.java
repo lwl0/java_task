@@ -3,6 +3,7 @@ package com.example.springbootdemo.controller;
 import com.baomidou.mybatisplus.extension.api.R;
 import com.example.springbootdemo.common.Result;
 import com.example.springbootdemo.entity.DataClean1;
+import com.example.springbootdemo.entity.User;
 import com.example.springbootdemo.exception.BusinessException;
 import com.example.springbootdemo.service.HomeService;
 import enums.ResultEnum;
@@ -59,6 +60,17 @@ public class HomeController {
         }catch (Exception e){
             e.printStackTrace();
             return Result.error(ResultEnum.DATABASE_ERROR.getCode(), ResultEnum.DATABASE_ERROR.getMessage());
+        }
+    }
+
+    @PutMapping("/update")
+    public Result<?> update(@RequestBody DataClean1 dataClean1) {
+        try {
+            homeService.update(dataClean1);
+            return Result.success();
+        } catch (Exception e){
+            e.printStackTrace();
+            return Result.error(ResultEnum.DATABASE_ERROR.getCode(), "数据库更新出错");
         }
     }
 }
