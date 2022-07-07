@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
  * @Date: 2022/7/7
  */
 
+@CrossOrigin
 @RestController    // 表示这是一个控制器
 @RequestMapping("/home")
 public class HomeController {

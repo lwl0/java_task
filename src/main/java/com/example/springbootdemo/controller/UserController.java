@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 
+@CrossOrigin
 @RestController    // 表示这是一个控制器
 @RequestMapping("/user")// 路由
 public class UserController {
