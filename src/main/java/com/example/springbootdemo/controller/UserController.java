@@ -40,7 +40,7 @@ public class UserController {
         return Result.success();
     }
 
-    //分页查询 todo 分页其实可以交给vue前端来做，后端把所有数据返回给前端就行
+    //分页查询
     @GetMapping
     public Result<?> findPage( @RequestParam(defaultValue = "1") Integer pageNum,       //defaultValue = "1" 表示默认值为1
                                @RequestParam(defaultValue = "10") Integer pageSize,
