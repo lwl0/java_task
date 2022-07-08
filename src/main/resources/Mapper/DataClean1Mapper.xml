@@ -32,6 +32,12 @@
     SELECT * FROM data_clean1 ORDER BY RAND() LIMIT #{num}
   </select>
   <select id="conditionQuery" resultType="com.example.springbootdemo.entity.DataClean1">
-    select * from sys_user where place like CONCAT('%',#{location},'%')
+    select * from data_clean1 where place like CONCAT('%',#{location},'%')
+  </select>
+  <select id="searchByMagAfter" resultType="java.lang.String">
+    SELECT id FROM data_clean1 WHERE mag &lt;= #{a} and mag &gt; #{b}
+  </select>
+  <select id="queryMagAndDepth" resultType="com.example.springbootdemo.VO.PointVO">
+    select mag, depth from data_clean1
   </select>
 </mapper>

@@ -49,7 +49,7 @@ public class RedisCacheAspect {
      * @return
      * @throws Throwable
      */
-    @Around("execution(* com.example.springbootdemo.mapper.DataClean1Mapper.*(..))")
+    @Around("execution(* com.example.springbootdemo.mapper.DataClean1Mapper.randSearch(..)) || execution(* com.example.springbootdemo.mapper.DataClean1Mapper.conditionQuery(..))")
     public Object cache(ProceedingJoinPoint jp) throws Throwable {
         // 得到类名、方法名和参数
         String clazzName = jp.getTarget().getClass().getName();
